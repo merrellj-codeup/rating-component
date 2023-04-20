@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --dark-blue: #262E38;
+  --very-dark-blue: #131518;
+  --light-grey: #969FAD;
+  --medium-grey: #7C8798;
+  --orange: #FC7614;
+  --pure-white: #FFFFFF;
+  --black-gradient: linear-gradient(180deg, #232A34 0%, #181E27 100%);
+  --border-radius: 30px;
+  --heading-large: 28px;
+  --rating: 16px;
+  --heading-medium: 15px;
+  --body: 15px;
+  --body-height: 24px;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+}
+
+.page-wrapper {
+  background-color: var(--very-dark-blue);
+}
+
+.rating-container {
+  background: var(--black-gradient);
+  padding: 32px;
+  max-width: 412px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.circle-wrapper {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-blue);
+  border-radius: 9999px;
+  color: var(--medium-grey);
+  transition: all ease .2s;
+  font-size: var(--rating);
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.rating-container h1 {
+  font-size: var(--heading-large);
+  color: var(--pure-white);
+}
+
+.rating-container p.rating-p {
+  color: var(--light-grey);
+  font-size: var(--body);
+  line-height: var(--body-height);
+}
+.rating-label input {
+  display:none;
+}
+
+.rating-label input:checked + .circle-wrapper {
+  background-color:var(--medium-grey);
+  color: var(--pure-white);
+}
+.rating-label input:checked + .circle-wrapper:hover {
+  background-color:var(--orange);
+  color: var(--pure-white);
+}
+
+.radio-inputs .circle-wrapper {
+  cursor:pointer;
+}
+
+.radio-inputs .circle-wrapper:hover {
+  background-color:var(--orange);
+  color: var(--pure-white);
+}
+
+.radio-inputs .circle-wrapper p {
+  position: relative;
+  top:2px;
+}
+
+button.button {
+  border-radius: 999px;
+  background-color: var(--orange);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all ease .2s;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: var(--heading-medium);
+  color: var(--pure-white);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+button.button:hover {
+  background-color: var(--pure-white);
+  color: var(--orange);
+}
+
+#ratingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rating Component</title>
+    <link rel="stylesheet" href="css/resets.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="container grow justify-center">
+            <div class="row align-center justify-center">
+                    <div class="rating-container">
+                        <div class="circle-wrapper">
+                            <img src="images/star.svg" class="star-icon" />
+                        </div>
+                        <h1>How did we do?</h1>
+                        <p class="rating-p">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                        <form id="ratingForm" method="post">
+                            <div class="d-flex justify-space-between radio-inputs">
+                                <label class="rating-label">
+                                    <input type="radio" name="rating" class="rating-radio"/>
+                                    <div class="circle-wrapper">
+                                        <p>1</p>
+                                    </div>
+                                </label>
+                                <label class="rating-label">
+                                    <input type="radio" name="rating" class="rating-radio"/>
+                                    <div class="circle-wrapper">
+                                        <p>2</p>
+                                    </div>
+                                </label>
+                                <label class="rating-label">
+                                    <input type="radio" name="rating" class="rating-radio"/>
+                                    <div class="circle-wrapper">
+                                        <p>3</p>
+                                    </div>
+                                </label>
+                                <label class="rating-label">
+                                    <input type="radio" name="rating" class="rating-radio"/>
+                                    <div class="circle-wrapper">
+                                        <p>4</p>
+                                    </div>
+                                </label>
+                                <label class="rating-label">
+                                    <input type="radio" name="rating" class="rating-radio"/>
+                                    <div class="circle-wrapper">
+                                        <p>5</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <button type="submit" class="button">Submit</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

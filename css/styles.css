@@ -14,6 +14,9 @@
   --heading-medium: 15px;
   --body: 15px;
   --body-height: 24px;
+  --breakpoint-phone: 375px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
 }
 
 body {
@@ -32,7 +35,7 @@ body {
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  justify-content: center;
 }
 
 .circle-wrapper {
@@ -73,6 +76,10 @@ body {
   color: var(--pure-white);
 }
 
+.radio-inputs {
+  margin: 10px 0;
+}
+
 .radio-inputs .circle-wrapper {
   cursor:pointer;
 }
@@ -94,7 +101,7 @@ button.button {
   border: none;
   cursor: pointer;
   transition: all ease .2s;
-  padding: 10px 20px;
+  padding: 15px 20px;
   text-transform: uppercase;
   font-size: var(--heading-medium);
   color: var(--pure-white);
@@ -107,8 +114,43 @@ button.button:hover {
   color: var(--orange);
 }
 
+button.button[disabled] {
+  opacity: .5;
+  pointer-events: none;
+}
+
 #ratingForm {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  transition: all ease .2s;
+}
+
+.rating-complete {
+  opacity: 0;
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  gap: 20px;
+  transition: all ease .2s;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+p.rating-result {
+  color: var(--orange);
+  font-size: 15px;
+  line-height: 24px;
+  background-color: var(--dark-blue);
+  text-align: center;
+  border-radius: var(--border-radius);
+  padding: 5px 20px;
+}
+
+@media (max-width: 375px){
+  .circle-wrapper {
+    height: 40px;
+    width: 40px;
+  }
 }

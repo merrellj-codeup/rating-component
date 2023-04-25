@@ -11,6 +11,7 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Further development](#further-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -79,6 +80,10 @@ const data = Object.fromEntries(formData.entries());
 ```
 
 I'll definitely be using this in the future!
+
+### Further development
+
+While placing a `div` inside a `label` is not compliant with the HTML5 specification, in practice, many modern browsers are quite forgiving and will still allow the `label` to work as expected. This is a bit of a hack, but it's a common one. If I were to resolve this, I would have to bring the hidden `input` and the `div` that represents it out of the `label`, and then use the `for` attribute on the `label` to associate it with the `input`. I would then have to wrap all three with a parent element and use CSS to position the `label` absolutely over top of the `div` that represents the `input`. This would be a lot of work for a small gain, so I decided to leave it as is.
 
 ### Useful resources
 

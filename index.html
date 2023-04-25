@@ -11,17 +11,17 @@
 </head>
 <body>
 
-    <main class="page-wrapper">
+    <main class="page-wrapper" role="main">
         <div class="container grow justify-center">
             <div class="row align-center justify-center">
                     <div class="rating-container">
-                        <form id="ratingForm" method="post">
+                        <form id="ratingForm" method="post" role="form">
                             <div class="circle-wrapper">
                                 <img src="images/star.svg" class="star-icon" alt="star icon" />
                             </div>
                             <h1>How did we do?</h1>
                             <p class="rating-p">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-                            <div class="d-flex justify-space-between radio-inputs">
+                            <div class="d-flex justify-space-between radio-inputs" role="radiogroup">
                                 <label class="rating-label">
                                     <input type="radio" name="rating" class="rating-radio" value="1"/>
                                     <div class="circle-wrapper">
@@ -55,7 +55,7 @@
                             </div>
                             <button type="submit" class="button" id="submitBtn">Submit</button>
                         </form>
-                        <div class="rating-complete">
+                        <div class="rating-complete" role="status">
                             <div class="d-flex align-center justify-center">
                                 <img src="images/done.svg" alt="done icon" />
                             </div>

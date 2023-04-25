@@ -11,10 +11,8 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -31,78 +29,65 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./images/screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/merrellj-codeup/rating-component](https://github.com/merrellj-codeup/rating-component)
+- Live Site URL: [https://codeup-rating-component.web.app/](https://codeup-rating-component.web.app/)
 
 ## My process
+I started by building the static HTML and CSS. I used CSS variables to create a color palette for the project, which I based off of the provided Figma file. I then added the JavaScript to make the rating interactive. I used JavaScript modules to separate the concerns of the JavaScript. I then added the "Thank you" card state after the rating is submitted.
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JavaScript modules
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I took on something simple for my first challenge, using some of the principles I teach in class: semantic HTML, CSS variables/custom properties, and JavaScript modules. I used modern CSS selectors to put as much of the styling in the CSS as possible. For example, I used the CSS sibling selector to ensure `:checked` radio inputs applied styling to the custom radio elements automatically:
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.rating-label input:checked + .circle-wrapper {
+  background-color:var(--medium-grey);
+  color: var(--pure-white);
+}
+.rating-label input:checked + .circle-wrapper:hover {
+  background-color:var(--orange);
+  color: var(--pure-white);
 }
 ```
+
+I also expanded on the UX of the `disabled` attribute on the submit button by adding the `pointer-events` property until a rating is selected:
+
+```css
+.button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+```
+
+In JavaScript, I did stumble on an interesting form class that's native to JS: `FormData()`. Before I used to get each input value individually, but this class allows you to get all the values at once. I used the following on the event listener for the submit button:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const form = e.target.closest('form');
+const formData = new FormData(form);
+const data = Object.fromEntries(formData.entries());
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'll definitely be using this in the future!
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) - Documentation on the FormData class in JavaScript. I used this to get all the form values at once.
+- [CSS Custom Properties (CSS Variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) - Documentation on CSS variables. I used this to create the color palette for the project.
+- [JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) - Documentation on JavaScript modules. I used this to create the JavaScript for the project and practice better separation of concerns.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- GitHub - [Jason Merrell](https://github.com/merrellj-codeup)
+- Codeup - The bootcamp school I teach at: [Codeup](https://codeup.com)
+- Frontend Mentor - [@merrellj-codeup](https://www.frontendmentor.io/profile/merrellj-codeup)
